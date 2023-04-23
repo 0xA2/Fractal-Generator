@@ -17,13 +17,13 @@ class ChaosGame:
 
 	def getPolygon(self):
 		delta = 360/self.nSides
-		r = self.width/2
+		radius = self.width/2
 		polygon = []
 
 		for i in range(0, self.nSides):
 			angle = (180 + i*delta)*math.pi/180
 			color = colorsys.hsv_to_rgb((i*delta)/360, 0.8, 1)
-			polygon.append(((self.width/2 + r*math.sin(angle), self.height/2 + r*math.cos(angle)),(int(color[0]*255), int(color[1]*255), int(color[2]*255))))
+			polygon.append(((self.width/2 + radius*math.sin(angle), self.height/2 + radius*math.cos(angle)),(int(color[0]*255), int(color[1]*255), int(color[2]*255))))
 		return polygon
 
 	def getRandomCorner(self, randSetting):
